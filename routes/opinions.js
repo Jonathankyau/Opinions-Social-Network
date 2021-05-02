@@ -1,7 +1,7 @@
 
 const express = require('express')
 const router = express.Router()
-const todosController = require('../controllers/opinions') 
+const opinionsController = require('../controllers/opinions') 
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 router.get('/', ensureAuth, opinionsController.getOpinions)

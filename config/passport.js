@@ -1,4 +1,3 @@
-//Jeremy adding prelim reqs while going over oauth local strategy video from office hours
 const LocalStrategy = require('passport-local').Strategy
 const mongoose = require('mongoose')
 const user = require('../models/User')

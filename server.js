@@ -8,7 +8,7 @@ const flash = require('express-flash')
 const logger = require('morgan')
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
-
+const opinionRoutes = require('./routes/opinions')
 
 require('dotenv').config({path: './config/.env'})
 
@@ -40,6 +40,7 @@ app.use(passport.session())
 app.use(flash())
 
 app.use('/', mainRoutes)
+app.use('/opinions', opinionRoutes)
 
 
 app.listen(process.env.PORT, ()=>{

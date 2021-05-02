@@ -12,17 +12,17 @@
     <h1>Opinions</h1>
     <ul>
     <% opinions.forEach( el => { %>
-            <li class='todoItem' data-id='<%=el._id%>'>
+            <li class='opinionItem' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.opinion %></span>
                 <span class='del'> Delete </span>
             </li>
     <% }) %>    
     </ul>
 
-    <h2><%= user.userName %> has <%= left %> things left to do.</h2>
+    <h2><%= user.userName %> has <%= left %> Opinions.</h2>
 
     <form action="/opinions/createOpinion" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+        <input type="text" placeholder="Enter Opinion" name='opinionItem'>
         <input type="submit">
     </form>
 
