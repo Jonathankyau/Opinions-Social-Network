@@ -3,9 +3,6 @@ const LocalStrategy = require('passport-local').Strategy
 const mongoose = require('mongoose')
 const user = require('../models/User')
 
-//Copied and pasted from hackathon boilerplate https://github.com/sahat/hackathon-starter/blob/master/config/passport.js
-//Leon uses this exact template
-
 module.exports = function (passport) {
   passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
     User.findOne({ email: email.toLowerCase() }, (err, user) => {
@@ -32,6 +29,6 @@ module.exports = function (passport) {
   })
 
   passport.deserializeUser((id, done) => {
-    User.findById(id, (err, user) => done(err, user))
+    user.findById(id, (err, user) => done(err, user))
   })
 }
