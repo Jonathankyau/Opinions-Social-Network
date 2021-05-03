@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Opinions</h1>
-    <ul>
+    <h1 class="text-center text-6xl text-purple-700">Opinions</h1>
+    <ul class="text-center text-black-700">
     <% opinions.forEach( el => { %>
             <li class='opinionItem' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.opinion %></span>
@@ -19,14 +19,16 @@
     <% }) %>    
     </ul>
 
-    <h2><%= user.userName %> has <%= left %> Opinions.</h2>
+    <h2 class="text-center"><%= user.userName %> has <%= left %> Opinions.</h2>
 
-    <form action="/opinions/createOpinion" method='POST'>
-        <input type="text" placeholder="Enter Opinion" name='opinionItem'>
-        <input type="submit">
+    <form class="text-center" action="/opinions/createOpinion" method='POST'>
+        <input class="border rounded-lg" type="text" placeholder="Enter Opinion" name='opinionItem'>
+        <input class="h-6 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800" type="submit">
     </form>
 
-    <a href="/logout">Logout</a>
+    <button class="h-6 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800" href="/logout">Logout</button>
+
+    <a class="text-center" href="/logout">Logout</a>
 
     <script src="js/main.js"></script>
 </body>
