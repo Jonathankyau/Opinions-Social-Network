@@ -8,9 +8,9 @@ router.get('/', ensureAuth, opinionsController.getOpinions)
 
 router.post('/createOpinion', opinionsController.createOpinion)
 
-router.put('/markComplete', opinionsController.markComplete)
+// router.put('/markComplete', opinionsController.markComplete)
 
-router.put('/markIncomplete', opinionsController.markIncomplete)
+// router.put('/markIncomplete', opinionsController.markIncomplete)
 
 router.delete('/deleteOpinion', opinionsController.deleteOpinion)
 

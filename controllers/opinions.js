@@ -20,28 +20,7 @@ module.exports = {
             console.log(err)
         }
     },
-    markComplete: async (req, res)=>{
-        try{
-            await Opinion.findOneAndUpdate({_id:req.body.opinionIdFromJSFile},{
-                completed: true
-            })
-            console.log('Marked Complete')
-            res.json('Marked Complete')
-        }catch(err){
-            console.log(err)
-        }
-    },
-    markIncomplete: async (req, res)=>{
-        try{
-            await Opinion.findOneAndUpdate({_id:req.body.opinionIdFromJSFile},{
-                completed: false
-            })
-            console.log('Marked Incomplete')
-            res.json('Marked Incomplete')
-        }catch(err){
-            console.log(err)
-        }
-    },
+
     deleteOpinion: async (req, res)=>{
         console.log(req.body.opinionIdFromJSFile)
         try{
@@ -53,3 +32,27 @@ module.exports = {
         }
     }
 } 
+
+    // markComplete: async (req, res)=>{
+    //     try{
+    //         await Opinion.findOneAndUpdate({_id:req.body.opinionIdFromJSFile},{
+    //             completed: true
+    //         })
+    //         console.log('Marked Complete')
+    //         res.json('Marked Complete')
+    //     }catch(err){
+    //         console.log(err)
+    //     }
+    // },
+    // markIncomplete: async (req, res)=>{
+    //     try{
+    //         await Opinion.findOneAndUpdate({_id:req.body.opinionIdFromJSFile},{
+    //             completed: false
+    //         })
+    //         console.log('Marked Incomplete')
+    //         res.json('Marked Incomplete')
+    //     }catch(err){
+    //         console.log(err)
+    //     }
+    // },
+
