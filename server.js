@@ -9,7 +9,7 @@ const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const opinionRoutes = require("./routes/opinions");
-const PORT = 4000;
+const PORT = 3001;
 
 require("dotenv").config({ path: "./config/.env" });
 
