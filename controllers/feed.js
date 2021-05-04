@@ -5,7 +5,21 @@ module.exports = {
     try {
       const allOpinions = await Opinion.find({});
       res.render("feed.ejs", { allOpinions });
-    } catch (err) {}
-    //get opinion array from the database to put in your ejs
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  likeOpinion: async (req, res) => {
+    try {
+      await Opinion.findOneAndUpdate(
+        { _id: req.body.opinionId },
+        {
+          $inc: { likes: 1 }
+        }
+      );
+      res.json({ message: "successfully liked" });
+    } catch (err) {
+      console.log(err);
+    }
   }
 };

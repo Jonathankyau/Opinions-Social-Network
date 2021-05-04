@@ -10,8 +10,6 @@ router.get("/opinions", opinionsController.getOpinions);
 
 router.post("/createOpinion", opinionsController.createOpinion);
 
-// router.put("/feed", feedController.likeOpinion);
-
 // router.put('/markIncomplete', opinionsController.markIncomplete)
 
 router.delete("/deleteOpinion", opinionsController.deleteOpinion);
