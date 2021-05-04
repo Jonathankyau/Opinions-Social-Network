@@ -7,27 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opinion</title>
     <link rel="stylesheet" href="css/style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
 </head>
 <body>
-    <h1>Opinions</h1>
-    <ul>
+    <h1 class="text-center text-6xl text-purple-700 mt-9">Opinions</h1>
+    <br>
+    <form class="text-center" action="/opinions/createOpinion" method='POST'>
+        <input class="border-2 border-purple-200 rounded-lg" type="text" placeholder="Enter Opinion" name='opinionItem'>
+        <input class="h-6 px-5 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800" type="submit">
+        <a class="h-6 px-6 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800 py-0.5" href="/feed">Go to Feed</a>
+        <a class="h-6 px-6 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800 py-0.5" href="/logout">Logout</a>
+    </form>
+    <br>
+    <h2 class="text-center"><%= user.userName %> has <%= left %> Opinions.</h2>
+    <br>
+    <ul class="container space-y-5 mx-4 sm:mx-auto my-4 max-w-xl">
     <% opinions.forEach( el => { %>
-            <li class='opinionItem' data-id='<%=el._id%>'>
+            <li class='opinionItem justify-center border border-purple-100 text-purple-700 rounded-md shadow-md hover:shadow-lg pl-16 p-4 ease-linear transition duration-150 flex flex-row' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.opinion %></span>
-                <span class='del'> Delete </span>
+                <span class="del far fa-trash-alt pl-10"> </span>
             </li>
     <% }) %>    
     </ul>
-
-    <h2><%= user.userName %> has <%= left %> Opinions.</h2>
-
-    <form action="/opinions/createOpinion" method='POST'>
-        <input type="text" placeholder="Enter Opinion" name='opinionItem'>
-        <input type="submit">
-    </form>
-    <a href="/feed">Go to Feed</a>
-    <a href="/logout">Logout</a>
-
     <script src="js/main.js"></script>
 </body>
 </html>
