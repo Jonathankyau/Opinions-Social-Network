@@ -10,7 +10,17 @@
 </head>
 <body>
     <h1 class="text-center text-6xl text-purple-700">Opinions</h1>
-    <ul class="text-center text-black-700">
+    <br>
+    <form class="text-center" action="/opinions/createOpinion" method='POST'>
+        <input class="border-2 border-purple-200 rounded-lg" type="text" placeholder="Enter Opinion" name='opinionItem'>
+        <input class="h-6 px-5 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800" type="submit">
+        <input class="h-6 px-5 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800" type="submit" value="Logout" formaction="/logout">
+        <a class="text-center" href="/logout">Logout</a>
+    </form>
+    <br>
+    <h2 class="text-center"><%= user.userName %> has <%= left %> Opinions.</h2>
+    <br>
+    <ul class="text-center text-black-700 divide-y divide-purple-400">
     <% opinions.forEach( el => { %>
             <li class='opinionItem' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.opinion %></span>
@@ -18,21 +28,6 @@
             </li>
     <% }) %>    
     </ul>
-
-    <h2 class="text-center"><%= user.userName %> has <%= left %> Opinions.</h2>
-
-    <form class="text-center" action="/opinions/createOpinion" method='POST'>
-        <input class="border rounded-lg" type="text" placeholder="Enter Opinion" name='opinionItem'>
-        <input class="h-6 px-5 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800" type="submit">
-    </form>
-
-    <button class="h-6 px-5 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800" href="/logout">Logout</button>
-
-    <form class="text-center" action="/logout" method='POST'>
-        <input class="border rounded-lg" type="text" placeholder="Enter Opinion" name='opinionItem'>
-        <input class="h-6 px-5 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800" type="submit">
-    </form>
-    <a class="text-center" href="/logout">Logout</a>
 
     <script src="js/main.js"></script>
 </body>
