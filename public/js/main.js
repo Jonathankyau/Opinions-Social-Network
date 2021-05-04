@@ -44,11 +44,11 @@ async function likeOpinion() {
       method: "put",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({
-        likes: opinionId + 1
+        opinionId
       })
     });
     const data = await response.json();
-    console.log(data);
+    console.log(data.message);
     location.reload();
   } catch (err) {
     console.log(err);
