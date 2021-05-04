@@ -19,7 +19,7 @@
         <!-- <span><%= opinionObj.userId %></span> -->
         <span><%= opinionObj.opinion %></span>
 
-        <span class="del"> Delete </span>
+        <span class="del far fa-trash-alt"> </span>
         <span class="fa fa-thumbs-up"><%= opinionObj.likes %></span>
       </li>
       <% }) %>
@@ -30,8 +30,4 @@
     <script src="js/main.js"></script>
   </body>
 </html>
-
-<!-- Adding likes to an opinion: 1. Have icon that user can click for put request
-on feed.ejs 2. Event listener will find matching doc in mongodb and increment
-the like value by 1 3. refresh page and get updated value of likes rendered on
-feed.ejs  -->
+<!-- Next steps: make delete option only available for the OP -->
