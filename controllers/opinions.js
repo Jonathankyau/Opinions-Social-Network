@@ -7,12 +7,12 @@ module.exports = {
       const opinionItems = await Opinion.find({ userId: req.user.id });
       const itemsLeft = await Opinion.countDocuments({
         userId: req.user.id,
-        completed: false
+        completed: false,
       });
       res.render("opinions.ejs", {
         opinions: opinionItems,
         left: itemsLeft,
-        user: req.user
+        user: req.user,
       });
     } catch (err) {
       console.log(err);
@@ -23,7 +23,7 @@ module.exports = {
       await Opinion.create({
         opinion: req.body.opinionItem,
         completed: false,
-        userId: req.user.id
+        userId: req.user.id,
       });
       console.log("Opinion has been added!");
       res.redirect("/opinions");
@@ -41,7 +41,7 @@ module.exports = {
     } catch (err) {
       console.log(err);
     }
-  }
+  },
 };
 
 //   likeOpinion: async (req, res) => {
