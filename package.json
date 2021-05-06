@@ -5,11 +5,14 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwind build src/style.css -o public/CSS/style.css",
+    "dev": "nodemon server.js"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "autoprefixer": "^10.2.5",
     "bcrypt": "^5.0.1",
     "cloudinary": "^1.25.1",
     "connect-mongo": "^3.2.0",
@@ -26,6 +29,8 @@
     "nodemon": "^2.0.7",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+    "postcss": "^8.2.13",
+    "tailwindcss": "^2.1.2",
     "validator": "^13.6.0"
   }
 }
