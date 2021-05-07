@@ -9,7 +9,7 @@ const connectDB = async () => {
       useFindAndModify: false,
       useCreateIndex: true
     });
-
+    
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (err) {
     console.error(err);
@@ -18,3 +18,4 @@ const connectDB = async () => {
 };
 
 module.exports = connectDB;
+
