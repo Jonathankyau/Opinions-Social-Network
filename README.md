@@ -17,6 +17,7 @@
 - [x] Make it so users can post their opinions
 - [x] Make it so users can delete their opinions
 - [x] Enable local auth
+
 ![Gif with a dude saying, "Frickin' awesome!"](https://media.giphy.com/media/xTiTnBMEz7zAKs57LG/giphy.gif)
 
 
