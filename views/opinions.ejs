@@ -15,8 +15,16 @@
 <body>
     <h1 class="text-center text-6xl text-purple-700 mt-9">Opinions</h1>
     <br>
-    <form class="text-center" action="/opinions/createOpinion" method='POST'>
-        <input class="border-2 border-purple-200 rounded-lg" type="text" placeholder="Enter Opinion" name='opinionItem'>
+    <form class="text-center" action="/opinions/createOpinion" enctype="multipart/form-data" method='POST'>
+        <div>
+            <label for="Opinion"> Add your opinion here: </label>
+            <input class="border-2 border-purple-200 rounded-lg" type="text" placeholder="Enter Opinion" name='opinionItem'>
+        </div>
+        <!-- image upload element -->
+        <div>
+            <label for="imgUpload" class="form-label">Image</label>
+            <input type="file" class="form-control" id="imageUpload" name="file">
+        </div>
         <input class="h-6 px-5 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800" type="submit">
         <a class="h-6 px-6 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800 py-0.5" href="/feed">Go to Feed</a>
         <a class="h-6 px-6 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800 py-0.5" href="/logout">Logout</a>
@@ -27,6 +35,7 @@
     <ul class="container space-y-5 mx-4 sm:mx-auto my-4 max-w-xl">
     <% opinions.forEach( el => { %>
             <li class='opinionItem justify-center border border-purple-100 text-purple-700 rounded-md shadow-md hover:shadow-lg pl-16 p-4 ease-linear transition duration-150 flex flex-row' data-id='<%=el._id%>'>
+                <img class="img-fluid" src="<%= el.image%>" />
                 <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.opinion %></span>
                 <span class="del far fa-trash-alt pl-10"> </span>
             </li>

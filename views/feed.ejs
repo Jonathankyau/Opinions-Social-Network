@@ -13,17 +13,29 @@
   </head>
   <body>
     <h1 class="text-center text-6xl text-purple-700 mt-9">Opinions Feed</h1>
-    <br>
-    <form class='text-center'>
-    <a class="h-6 px-6 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800 py-0.5" href="/opinions">Post an Opinion</a>
-    <a class="h-6 px-6 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800 py-0.5" href="/logout">Logout</a>
+    <br />
+    <form class="text-center">
+      <a
+        class="h-6 px-6 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800 py-0.5"
+        href="/opinions"
+        >Post an Opinion</a
+      >
+      <a
+        class="h-6 px-6 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800 py-0.5"
+        href="/logout"
+        >Logout</a
+      >
     </form>
     <ul class="container space-y-5 mx-4 sm:mx-auto my-4 max-w-xl">
       <% allOpinions.forEach( opinionObj => { %>
-      <li class="opinionItem justify-center border border-purple-100 text-purple-700 rounded-md shadow-md hover:shadow-lg pl-16 p-4 ease-linear transition duration-150 flex flex-row" data-id="<%= opinionObj._id %>">
+      <li
+        class="opinionItem justify-center border border-purple-100 text-purple-700 rounded-md shadow-md hover:shadow-lg pl-16 p-4 ease-linear transition duration-150 flex flex-row"
+        data-id="<%= opinionObj._id %>"
+      >
         <!-- <span><%= opinionObj.userId %></span> -->
         <span><%= opinionObj.opinion %></span>
         <span class="fa fa-thumbs-up px-4"><%= opinionObj.likes %></span>
+        <img class="img-fluid" src="<%= opinionObj.image %>" />
         <!-- <span class="del far fa-trash-alt px-1"></span> -->
       </li>
       <% }) %>
