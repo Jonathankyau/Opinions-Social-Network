@@ -1,4 +1,5 @@
 const Opinion = require("../models/Opinion");
+const cloudinary = require("../middleware/cloudinary");
 
 module.exports = {
   getOpinions: async (req, res) => {
@@ -20,8 +21,16 @@ module.exports = {
   },
   createOpinion: async (req, res) => {
     try {
+      // upload image to cloudinary - upload the file that was submited with the form
+      // the file gets submited to cloudinary before the post is created.
+      const result = await cloudinary.uploader.upload(req.file.path);
+
       await Opinion.create({
         opinion: req.body.opinionItem,
+        // grab the url that comes back as result from cloudinary --  this is the path that comes back from cloudinary
+        image: result.secure_url, // plugging this info into our doc in database
+        // grab the id that comes back as a result form cloudinary
+        cloudinaryId: result.public_id,
         completed: false,
         userId: req.user.id,
       });
@@ -31,11 +40,12 @@ module.exports = {
       console.log(err);
     }
   },
-
+  // need to check why it is not deleting post uppon first click on delete button. It will delete after it refreshes
   deleteOpinion: async (req, res) => {
     console.log(req.body.opinionIdFromJSFile);
     try {
       await Opinion.findOneAndDelete({ _id: req.body.opinionIdFromJSFile });
+      await cloudinary.uploader.destroy(opinion.cloudinaryId); // to delete the image whenever we delete the opinion post
       console.log("Deleted Opinion");
       res.json("Deleted It");
     } catch (err) {
