@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 // required multer middleware -- assist in uploading files
-const upload = multer("../middleware/multer");
+const upload = require("../middleware/multer");
 const opinionsController = require("../controllers/opinions");
 const feedController = require("../controllers/feed");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
