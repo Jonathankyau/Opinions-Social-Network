@@ -16,6 +16,7 @@
     <h1 class="text-center text-2xl text-purple-700 mt-9">Opinions Feed</h1>
     <br />
     <form class="text-center mb-4">
+      <!-- link routes user to opinions page, where they can access the text field and image uploader -->
       <a
         class="h-6 px-6 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800 py-0.5"
         href="/opinions"
@@ -27,6 +28,7 @@
       >
     </form>
     <ul class="container space-y-5 sm:mx-auto max-w-xl">
+      <!-- loops through each opinion and coverts them into their own list items -->
       <% allOpinions.forEach( opinionObj => { %>
       <li
         class="opinionItem border border-purple-100 text-purple-700 rounded-md shadow-md hover:shadow-lg pl-16 p-4 ease-linear transition duration-150"
@@ -36,6 +38,7 @@
         <div class="flex flex-col mb-2"><img class="img-fluid" src="<%= opinionObj.image %>" /></div>
         <div class="justify-center flex flex-row">
           <span><%= opinionObj.opinion %></span>
+          <!-- each li is given a thumbs up icon with an event listener. Default 0 likes in the model when the user first posts the item -->
           <span class="fa fa-thumbs-up pl-10 grid"><%= opinionObj.likes %></span>
         </div>
         <!-- <span class="del far fa-trash-alt px-1"></span> -->
