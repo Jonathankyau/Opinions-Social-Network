@@ -1,4 +1,4 @@
-
+<%- include('partials/header') -%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,31 +13,37 @@
   />
 </head>
 <body>
-    <h1 class="text-center text-6xl text-purple-700 mt-9">Opinions</h1>
+    <h1 class="text-center text-2xl text-purple-700 mt-12"><%= user.userName %> has <%= left %> Opinions</h1>
     <br>
+    <!-- Opinion submission element -->
     <form class="text-center" action="/opinions/createOpinion" enctype="multipart/form-data" method='POST'>
         <div>
             <label for="Opinion"> Add your opinion here: </label>
             <input class="border-2 border-purple-200 rounded-lg" type="text" placeholder="Enter Opinion" name='opinionItem'>
         </div>
-        <!-- image upload element -->
-        <div>
-            <label for="imgUpload" class="form-label">Image</label>
-            <input type="file" class="form-control" id="imageUpload" name="file">
+        <br>
+        <!-- Image upload element -->
+        <div class="container-sm w-1/3 mb-3">
+            <label for="imgUpload" class="form-label">Add an image:</label>
+            <input type="file" class="form-control border-2 border-purple-200 rounded-lg" id="imageUpload" name="file">
         </div>
+        <!-- Submit button -->
         <input class="h-6 px-5 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800" type="submit">
+        <!-- Feed button -->
         <a class="h-6 px-6 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800 py-0.5" href="/feed">Go to Feed</a>
+        <!-- Logout button -->
         <a class="h-6 px-6 m-2 text-purple-100 transition-colors duration-150 bg-purple-700 rounded-lg focus:shadow-outline hover:bg-purple-800 py-0.5" href="/logout">Logout</a>
     </form>
     <br>
-    <h2 class="text-center"><%= user.userName %> has <%= left %> Opinions.</h2>
-    <br>
-    <ul class="container space-y-5 mx-4 sm:mx-auto my-4 max-w-xl">
+    <!-- Opinion list item -->
+    <ul class="container space-y-5 sm:mx-auto max-w-xl">
     <% opinions.forEach( el => { %>
-            <li class='opinionItem justify-center border border-purple-100 text-purple-700 rounded-md shadow-md hover:shadow-lg pl-16 p-4 ease-linear transition duration-150 flex flex-row' data-id='<%=el._id%>'>
-                <img class="img-fluid" src="<%= el.image%>" />
-                <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.opinion %></span>
-                <span class="del far fa-trash-alt pl-10"> </span>
+            <li class='opinionItem border border-purple-100 text-purple-700 rounded-md shadow-md hover:shadow-lg pl-16 p-4 ease-linear transition duration-150' data-id='<%=el._id%>'>
+                <div class="flex flex-col mb-2"><img class="img-fluid" src="<%= el.image%>" /></div>
+                <div class="justify-center flex flex-row">
+                    <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.opinion %></span>    
+                    <span class="del far fa-trash-alt pl-10 grid"> </span>
+                </div>
             </li>
     <% }) %>    
     </ul>
