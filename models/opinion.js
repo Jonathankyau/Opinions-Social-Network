@@ -1,3 +1,4 @@
+// ensures each opinion that is posted follows this structure
 const mongoose = require("mongoose");
 
 const OpinionSchema = new mongoose.Schema({
@@ -7,32 +8,32 @@ const OpinionSchema = new mongoose.Schema({
   // },
   image: {
     type: String,
-    require: true,
+    require: true
   },
   cloudinaryId: {
     type: String,
-    require: true,
+    require: true
   },
   opinion: {
     type: String,
-    required: true,
+    required: true
   },
   completed: {
     type: Boolean,
-    required: true,
+    required: true
   },
   userId: {
     type: String,
-    required: true,
+    required: true
   },
   likes: {
     type: Number,
-    default: 0,
+    default: 0
   },
   createdAt: {
     type: Date,
-    default: Date.now,
-  },
+    default: Date.now
+  }
 });
 
 module.exports = mongoose.model("Opinion", OpinionSchema);
