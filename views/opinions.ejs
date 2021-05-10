@@ -17,6 +17,11 @@
     <br>
     <!-- Opinion submission element -->
     <form class="text-center" action="/opinions/createOpinion" enctype="multipart/form-data" method='POST'>
+        <!-- opinion title element -->
+        <div>
+            <label for="Opinion"> Add your opinion title here: </label>
+            <input class="border-2 border-purple-200 rounded-lg" type="text" placeholder="Enter Opinion Title" name='opinionTitle'>
+        </div>
         <div>
             <label for="Opinion"> Add your opinion here: </label>
             <input class="border-2 border-purple-200 rounded-lg" type="text" placeholder="Enter Opinion" name='opinionItem'>
@@ -39,6 +44,8 @@
     <ul class="container space-y-5 sm:mx-auto max-w-xl">
     <% opinions.forEach( el => { %>
             <li class='opinionItem border border-purple-100 text-purple-700 rounded-md shadow-md hover:shadow-lg pl-16 p-4 ease-linear transition duration-150' data-id='<%=el._id%>'>
+                <!-- add title property -->
+                <h2><%= el.title %></h2>
                 <div class="flex flex-col mb-2"><img class="img-fluid" src="<%= el.image%>" /></div>
                 <div class="justify-center flex flex-row">
                     <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.opinion %></span>    

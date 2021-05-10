@@ -8,12 +8,12 @@ module.exports = {
       const opinionItems = await Opinion.find({ userId: req.user.id });
       const itemsLeft = await Opinion.countDocuments({
         userId: req.user.id,
-        completed: false
+        completed: false,
       });
       res.render("opinions.ejs", {
         opinions: opinionItems,
         left: itemsLeft,
-        user: req.user
+        user: req.user,
       });
     } catch (err) {
       console.log(err);
@@ -26,14 +26,17 @@ module.exports = {
       const result = await cloudinary.uploader.upload(req.file.path);
 
       await Opinion.create({
+        // grab title value from Opinion object
+        title: req.body.opinionTitle,
         opinion: req.body.opinionItem,
         // grab the url that comes back as result from cloudinary --  this is the path that comes back from cloudinary
         image: result.secure_url, // plugging this info into our doc in database
         // grab the id that comes back as a result form cloudinary
         cloudinaryId: result.public_id,
         completed: false,
-        userId: req.user.id
+        userId: req.user.id,
       });
+      console.log(Opinion);
       console.log("Opinion has been added!");
       res.redirect("/opinions");
     } catch (err) {
@@ -46,7 +49,7 @@ module.exports = {
     console.log(req.body);
     try {
       let opinion = await Opinion.findOneAndDelete({
-        _id: req.body.opinionIdFromJSFile
+        _id: req.body.opinionIdFromJSFile,
       });
       await cloudinary.uploader.destroy(opinion.cloudinaryId); // to delete the image whenever we delete the opinion post
       await Opinion.deleteOne({ _id: req.params.id });
@@ -54,7 +57,7 @@ module.exports = {
     } catch (err) {
       console.log(err);
     }
-  }
+  },
 };
 
 //   likeOpinion: async (req, res) => {
