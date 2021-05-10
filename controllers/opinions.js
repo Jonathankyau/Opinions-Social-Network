@@ -1,5 +1,6 @@
 const Opinion = require("../models/Opinion");
 const cloudinary = require("../middleware/cloudinary");
+const validator = require("validator");
 
 module.exports = {
   getOpinions: async (req, res) => {
@@ -8,12 +9,12 @@ module.exports = {
       const opinionItems = await Opinion.find({ userId: req.user.id });
       const itemsLeft = await Opinion.countDocuments({
         userId: req.user.id,
-        completed: false,
+        completed: false
       });
       res.render("opinions.ejs", {
         opinions: opinionItems,
         left: itemsLeft,
-        user: req.user,
+        user: req.user
       });
     } catch (err) {
       console.log(err);
@@ -23,6 +24,21 @@ module.exports = {
     try {
       // upload image to cloudinary - upload the file that was submited with the form
       // the file gets submited to cloudinary before the post is created.
+      console.log(req.file);
+      const validationErrors = [];
+      if (!validator.isLength(req.body.opinionTitle, { min: 1 }))
+        validationErrors.push({ msg: "A title is required!" });
+
+      if (!validator.isLength(req.body.opinionItem, { min: 1 }))
+        validationErrors.push({ msg: "An opinion is required!" });
+      if (!req.file) {
+        validationErrors.push({ msg: "A photo is required!" });
+      }
+      if (validationErrors.length) {
+        req.flash("errors", validationErrors);
+        return res.redirect("/opinions");
+      }
+
       const result = await cloudinary.uploader.upload(req.file.path);
 
       await Opinion.create({
@@ -34,13 +50,17 @@ module.exports = {
         // grab the id that comes back as a result form cloudinary
         cloudinaryId: result.public_id,
         completed: false,
-        userId: req.user.id,
+        userId: req.user.id
       });
       console.log(Opinion);
       console.log("Opinion has been added!");
       res.redirect("/opinions");
     } catch (err) {
-      console.log(err);
+      console.log("err.errors log");
+      if (err.errors) {
+        req.flash("error", err.errors.title.properties.message);
+        res.redirect(303, "/opinions");
+      }
     }
   },
   // need to check why it is not deleting post uppon first click on delete button. It will delete after it refreshes
@@ -49,7 +69,7 @@ module.exports = {
     console.log(req.body);
     try {
       let opinion = await Opinion.findOneAndDelete({
-        _id: req.body.opinionIdFromJSFile,
+        _id: req.body.opinionIdFromJSFile
       });
       await cloudinary.uploader.destroy(opinion.cloudinaryId); // to delete the image whenever we delete the opinion post
       await Opinion.deleteOne({ _id: req.params.id });
@@ -57,7 +77,7 @@ module.exports = {
     } catch (err) {
       console.log(err);
     }
-  },
+  }
 };
 
 //   likeOpinion: async (req, res) => {
