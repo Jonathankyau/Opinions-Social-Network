@@ -43,15 +43,14 @@ module.exports = {
   // need to check why it is not deleting post uppon first click on delete button. It will delete after it refreshes
   /* solution: assigned 'opinion' variable to the findOneAndDelete promise in order to define line 51*/
   deleteOpinion: async (req, res) => {
-    console.log(req.body.opinionIdFromJSFile);
+    console.log(req.body);
     try {
       let opinion = await Opinion.findOneAndDelete({
         _id: req.body.opinionIdFromJSFile
       });
       await cloudinary.uploader.destroy(opinion.cloudinaryId); // to delete the image whenever we delete the opinion post
-      await Opinion.remove({ _id: req.params.id });
-      console.log("Deleted Opinion");
-      res.json("Deleted It");
+      await Opinion.deleteOne({ _id: req.params.id });
+      res.end();
     } catch (err) {
       console.log(err);
     }

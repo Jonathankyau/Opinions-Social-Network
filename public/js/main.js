@@ -20,7 +20,8 @@ Array.from(likes).forEach((el) => {
 // })
 
 async function deleteOpinion() {
-  const opinionId = this.parentNode.dataset.id;
+  const opinionId = this.parentNode.parentNode.dataset.id;
+  console.log(opinionId);
   try {
     const response = await fetch("opinions/deleteOpinion", {
       method: "delete",
@@ -29,8 +30,6 @@ async function deleteOpinion() {
         opinionIdFromJSFile: opinionId
       })
     });
-    const data = await response.json();
-    console.log(data);
     location.reload();
   } catch (err) {
     console.log(err);
@@ -38,7 +37,7 @@ async function deleteOpinion() {
 }
 
 async function likeOpinion() {
-  const opinionId = this.parentNode.dataset.id;
+  const opinionId = this.parentNode.parentNode.dataset.id;
   try {
     const response = await fetch("/feed", {
       method: "put",
