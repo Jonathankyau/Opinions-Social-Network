@@ -17,12 +17,26 @@ module.exports = {
       await Opinion.findOneAndUpdate(
         { _id: req.body.opinionId },
         {
-          $inc: { likes: 1 }
+          $inc: { likes: 1 },
         }
       );
       res.json({ message: "successfully liked" });
     } catch (err) {
       console.log(err);
     }
-  }
+  },
+  // add downvote method
+  downvoteOpinion: async (req, res) => {
+    try {
+      await Opinion.findOneAndUpdate(
+        { _id: req.body.opinionId },
+        {
+          $inc: { downvotes: 1 },
+        }
+      );
+      res.json({ message: "successfully disapproved" });
+    } catch (err) {
+      console.log(err);
+    }
+  },
 };
