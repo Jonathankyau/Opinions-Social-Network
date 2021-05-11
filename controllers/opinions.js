@@ -9,12 +9,12 @@ module.exports = {
       const opinionItems = await Opinion.find({ userId: req.user.id });
       const itemsLeft = await Opinion.countDocuments({
         userId: req.user.id,
-        completed: false
+        completed: false,
       });
       res.render("opinions.ejs", {
         opinions: opinionItems,
         left: itemsLeft,
-        user: req.user
+        user: req.user,
       });
     } catch (err) {
       console.log(err);
@@ -50,7 +50,9 @@ module.exports = {
         // grab the id that comes back as a result form cloudinary
         cloudinaryId: result.public_id,
         completed: false,
-        userId: req.user.id
+        // added property with user name info after creating a opinion post
+        user: req.user.userName,
+        userId: req.user.id,
       });
       console.log(Opinion);
       console.log("Opinion has been added!");
@@ -69,7 +71,7 @@ module.exports = {
     console.log(req.body);
     try {
       let opinion = await Opinion.findOneAndDelete({
-        _id: req.body.opinionIdFromJSFile
+        _id: req.body.opinionIdFromJSFile,
       });
       await cloudinary.uploader.destroy(opinion.cloudinaryId); // to delete the image whenever we delete the opinion post
       await Opinion.deleteOne({ _id: req.params.id });
@@ -77,7 +79,7 @@ module.exports = {
     } catch (err) {
       console.log(err);
     }
-  }
+  },
 };
 
 //   likeOpinion: async (req, res) => {
