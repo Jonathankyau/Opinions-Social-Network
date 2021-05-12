@@ -14,14 +14,14 @@ On Opinion, you can create an account, share your opinions, and look at the opin
 
 This bomb-ass app was made with Node.js, MongoDB, vanilla JavaScript, EJS, and TailwindCSS. _Node way_, are we right?
 
+## Use and Installation
 
 ##### You may be wondering, "Do I need any fancy stuff to run this incredible app?" And the answer to that, our friend, would be, "Nope. U good." Just put in that URL and smash that enter button.
 
 View Project Here: [Opinions Social Network](https://opinions-social-network.herokuapp.com/)
 
 
-
-## "What about installing anything?" 
+#### "What about installing anything?" 
 
 To use this project as a base for your own project--expanding on what we've done so far--fork the project, clone it to your local machine, and work from there! Feel free to submit pull requests if you have any sweet additions that go along with the theme of our project. 
 
@@ -79,6 +79,7 @@ or
 - [x] Make it so users can post their opinions
 - [x] Make it so users can delete their opinions
 - [x] Enable local auth
+- [x] Add upvote feature
 - [x] Added photo upload feature to meme out even harder
 
 ![Gif with a dude saying, "Frickin' awesome!"](https://media.giphy.com/media/xTiTnBMEz7zAKs57LG/giphy.gif)
