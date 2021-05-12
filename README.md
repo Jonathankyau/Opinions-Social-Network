@@ -1,5 +1,18 @@
-# OPINION
-![Gif with Jeff Bridges saying, 'Yeah, well, that's just, like, your opinion man.'](https://media.giphy.com/media/MPuTZQqOmYKPK/giphy.gif)
+---
+
+
+<p align="center">
+  <img width="412" height="167" src="https://i.imgur.com/YwK8tMe.png">
+</p>
+
+---
+
+
+<p align="center">
+  <img width="480" height="282" src="https://media.giphy.com/media/MPuTZQqOmYKPK/giphy.gif">
+</p>
+
+
 
 ### Have you ever wanted to state your opinion and then have like no one be able to counter it? My friend, this app is for YOU. This is your time to shine. 
 
@@ -103,3 +116,15 @@ or
 ### The team members that made this sick app come to life are [Jeremy Seckinger](https://github.com/JeremySeckinger), [Shara Crosslin](https://github.com/citizen-snipz), [Tim Calas](https://github.com/tinytorches), [Jonathan Yau](https://github.com/Jonathankyau), [Marcelo Azevedo](https://github.com/celoazevedo), and [Ruth Reed](https://github.com/helloitsrufio). 
 
 ![Gif of NFL players do the can-can.](https://i.giphy.com/media/l3mZjdRvlqk4LB0A0/giphy.webp)
+
+## Current Screenshots of our humbly opinionated app
+
+![Landing Page View](https://i.imgur.com/6H8WATv.png)
+
+![Login View](https://i.imgur.com/csM5110.png)
+
+![Signup View](https://i.imgur.com/EwX1cGF.png)
+
+![Logged In User View](https://i.imgur.com/zHE73mT.png)
+
+![Feed View](https://i.imgur.com/T3cMbjs.png)
