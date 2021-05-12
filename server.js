@@ -21,7 +21,7 @@ require("./config/passport")(passport);
 connectDB();
 
 app.set("view engine", "ejs");
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(logger("dev"));
@@ -46,5 +46,5 @@ app.use("/", mainRoutes);
 app.use("/opinions", opinionRoutes);
 
 app.listen(process.env.PORT || PORT, () => {
-  console.log(`Server is running, you better catch it! (port ${PORT})`);
+  console.log("Server is running, you better catch it! (port ${PORT})");
 });

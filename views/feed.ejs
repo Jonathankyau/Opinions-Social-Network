@@ -74,6 +74,8 @@
         <!-- <span><%= opinionObj.userId %></span> -->
         <!-- Add opinion Title element -->
         <span><%= opinionObj.title %></span>
+        <!-- Add opinion Username element -->
+        <span><%= opinionObj.user %></span>
         <div class="flex flex-col mb-2">
           <img class="img-fluid" src="<%= opinionObj.image %>" />
         </div>
@@ -82,6 +84,9 @@
           <!-- each li is given a thumbs up icon with an event listener. Default 0 likes in the model when the user first posts the item -->
           <span class="fa fa-thumbs-up pl-10 grid"
             ><%= opinionObj.likes %></span
+          >
+          <span class="fa fa-thumbs-down pl-10 grid"
+            ><%= opinionObj.downvotes %></span
           >
         </div>
         <!-- <span class="del far fa-trash-alt px-1"></span> -->

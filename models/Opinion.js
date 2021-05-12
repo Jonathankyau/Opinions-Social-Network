@@ -4,36 +4,44 @@ const mongoose = require("mongoose");
 const OpinionSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: [true, "You need to have a title!"]
+    required: [true, "You need to have a title!"],
   },
   image: {
     type: String,
-    require: true
+    require: true,
   },
   cloudinaryId: {
     type: String,
-    require: true
+    require: true,
   },
   opinion: {
     type: String,
-    required: true
+    required: true,
   },
   completed: {
     type: Boolean,
-    required: true
+    required: true,
   },
   userId: {
     type: String,
-    required: true
+    required: true,
+  },
+  user: {
+    type: String,
+    required: false,
   },
   likes: {
     type: Number,
-    default: 0
+    default: 0,
+  },
+  downvotes: {
+    type: String,
+    default: 0,
   },
   createdAt: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 module.exports = mongoose.model("Opinion", OpinionSchema);
