@@ -21,7 +21,9 @@
 
 On Opinion, you can create an account, share your opinions, and look at the opinions of others. While you can't counter their opinions directly, you can give them a like if you are feeling that sweet sweet reinforcement of your own beliefs--or downvote them to eternity, up to you 😈
 
-
+<div align="center">
+<img src="https://media.giphy.com/media/eKhhSRRiIW3OrkU5ef/giphy.gif">
+</div>
 
 ## Technologies used
 
@@ -117,14 +119,27 @@ or
 
 ![Gif of NFL players do the can-can.](https://i.giphy.com/media/l3mZjdRvlqk4LB0A0/giphy.webp)
 
-## Current Screenshots of our humbly opinionated app
+---
+
+
+### Current Screenshots of our humbly opinionated app
+
+---
 
 ![Landing Page View](https://i.imgur.com/6H8WATv.png)
 
+---
+
 ![Login View](https://i.imgur.com/csM5110.png)
+
+---
 
 ![Signup View](https://i.imgur.com/EwX1cGF.png)
 
+---
+
 ![Logged In User View](https://i.imgur.com/zHE73mT.png)
+
+---
 
 ![Feed View](https://i.imgur.com/T3cMbjs.png)
