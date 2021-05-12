@@ -46,5 +46,5 @@ app.use("/", mainRoutes);
 app.use("/opinions", opinionRoutes);
 
 app.listen(process.env.PORT || PORT, () => {
-  console.log(`Server is running, you better catch it! (port ${PORT})`);
+  console.log("Server is running, you better catch it! (port ${PORT})");
 });
