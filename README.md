@@ -1,5 +1,11 @@
-# OPINION
-![Gif with Jeff Bridges saying, 'Yeah, well, that's just, like, your opinion man.'](https://media.giphy.com/media/MPuTZQqOmYKPK/giphy.gif)
+
+<p align="center">
+  <img width="412" height="167" src="https://i.imgur.com/YwK8tMe.png">
+</p>
+
+<p align="center">
+  <img width="480" height="282" src="https://media.giphy.com/media/MPuTZQqOmYKPK/giphy.gif">
+</p>
 
 ### Have you ever wanted to state your opinion and then have like no one be able to counter it? My friend, this app is for YOU. This is your time to shine. 
 
