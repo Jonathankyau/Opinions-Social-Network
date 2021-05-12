@@ -103,3 +103,15 @@ or
 ### The team members that made this sick app come to life are [Jeremy Seckinger](https://github.com/JeremySeckinger), [Shara Crosslin](https://github.com/citizen-snipz), [Tim Calas](https://github.com/tinytorches), [Jonathan Yau](https://github.com/Jonathankyau), [Marcelo Azevedo](https://github.com/celoazevedo), and [Ruth Reed](https://github.com/helloitsrufio). 
 
 ![Gif of NFL players do the can-can.](https://i.giphy.com/media/l3mZjdRvlqk4LB0A0/giphy.webp)
+
+## Current Screenshots of our humbly opinionated app
+
+![Landing Page View](https://i.imgur.com/6H8WATv.png)
+
+![Login View](https://i.imgur.com/csM5110.png)
+
+![Signup View](https://i.imgur.com/EwX1cGF.png)
+
+![Logged In User View](https://i.imgur.com/zHE73mT.png)
+
+![Feed View](https://i.imgur.com/T3cMbjs.png)
