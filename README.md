@@ -112,6 +112,8 @@ or
 - [ ] Enable users to update their opinions
 - [x] Add a downvote button 
 - [ ] Make photograph upload optional
+- [ ] Limit downvote to one per user per post
+- [ ] Limit upvote to one per user per post
 
 ---
 
