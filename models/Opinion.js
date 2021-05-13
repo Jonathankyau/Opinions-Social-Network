@@ -35,7 +35,7 @@ const OpinionSchema = new mongoose.Schema({
     default: 0,
   },
   downvotes: {
-    type: String,
+    type: Number,  
     default: 0,
   },
   createdAt: {
