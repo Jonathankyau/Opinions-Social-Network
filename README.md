@@ -38,7 +38,7 @@ View Project Here: [Opinions Social Network](https://opinions-social-network.her
 
 #### "What about installing anything?" 
 
-To use this project as a base for your own project--expanding on what we've done so far--fork the project, clone it to your local machine, and work from there! Feel free to submit pull requests if you have any sweet additions that go along with the theme of our project. 
+To use this project as a base for your own project--expanding on what we've done so far--fork the project, clone it to your local machine, and work from there! Feel free to submit pull requests if you have any sweet additions that go along with the theme of our project. A task list is down below with future suggested improvements 😉
 
 ### Install
 
