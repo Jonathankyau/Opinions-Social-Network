@@ -8,8 +8,6 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 router.get("/", ensureAuth, opinionsController.getOpinions);
 
-router.get("/opinions", opinionsController.getOpinions);
-
 // upload.single - from multer middleware that handles file uploading.
 // the upload single file is now part of the createOpinion route
 router.post(
