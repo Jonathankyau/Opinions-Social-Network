@@ -2,6 +2,7 @@ const deleteBtn = document.querySelectorAll(".del");
 const todoItem = document.querySelectorAll("span.not");
 const todoComplete = document.querySelectorAll("span.completed");
 const likes = document.querySelectorAll(".fa-thumbs-up");
+const downvotes = document.querySelectorAll(".fa-thumbs-down");
 
 Array.from(deleteBtn).forEach((el) => {
   el.addEventListener("click", deleteOpinion);
@@ -9,6 +10,10 @@ Array.from(deleteBtn).forEach((el) => {
 
 Array.from(likes).forEach((el) => {
   el.addEventListener("click", likeOpinion);
+});
+
+Array.from(downvotes).forEach((el) => {
+  el.addEventListener("click", downvoteOpinion);
 });
 
 // Array.from(todoItem).forEach((el)=>{
@@ -39,7 +44,25 @@ async function deleteOpinion() {
 async function likeOpinion() {
   const opinionId = this.parentNode.parentNode.dataset.id;
   try {
-    const response = await fetch("/feed", {
+    const response = await fetch("/feed/like", {
+      method: "put",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        opinionId
+      })
+    });
+    const data = await response.json();
+    console.log(data.message);
+    location.reload();
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+async function downvoteOpinion() {
+  const opinionId = this.parentNode.parentNode.dataset.id;
+  try {
+    const response = await fetch("/feed/downvote", {
       method: "put",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({
