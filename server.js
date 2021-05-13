@@ -9,6 +9,7 @@ const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const opinionRoutes = require("./routes/opinions");
+const feedRoutes = require("./routes/feed.js");
 // whenever I connect to the server from the PORT declared in the .env file, the PORT that we are declaring here is the one loggin in the console.
 // that threw me out for a bit since I had port 2121 in my .env file!
 const PORT = 3001;
@@ -32,7 +33,7 @@ app.use(
     secret: "keyboard cat",
     resave: false,
     saveUninitialized: false,
-    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
   })
 );
 
@@ -42,8 +43,9 @@ app.use(passport.session());
 
 app.use(flash());
 
-app.use("/", mainRoutes);
 app.use("/opinions", opinionRoutes);
+app.use("/feed", feedRoutes);
+app.use("/", mainRoutes);
 
 app.listen(process.env.PORT || PORT, () => {
   console.log("Server is running, you better catch it! (port ${PORT})");
