@@ -27,7 +27,7 @@ On Opinion, you can create an account, share your opinions, and look at the opin
 
 ## Technologies used
 
-Made with Node.js, MongoDB, vanilla JavaScript, EJS, and TailwindCSS. _Node way_, are we right?
+Made with Node.js and Express, MongoDB and Mongoose, vanilla JavaScript, EJS, TailwindCSS, and Cloudinary. _Node way_, are we right?
 
 ## Use and Installation
 
