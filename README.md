@@ -13,10 +13,6 @@
 </p>
 
 
-
-### Have you ever wanted to state your opinion and then have like no one be able to counter it? My friend, this app is for YOU. This is your time to shine. 
-
-
 ## Description
 
 On Opinion, you can create an account, share your opinions, and look at the opinions of others. While you can't counter their opinions directly, you can give them a like if you are feeling that sweet sweet reinforcement of your own beliefs--or downvote them to eternity, up to you 😈
@@ -101,12 +97,7 @@ or
 
 ![Gif with a dude saying, "Frickin' awesome!"](https://media.giphy.com/media/xTiTnBMEz7zAKs57LG/giphy.gif)
 
-
-### You may be thinking, "There's no possible way to make this app more awesome." 
-
-![Gif of Justin Timberlake saying, "Stop it!"](https://media.giphy.com/media/oFeUVZfiuim9G/giphy.gif)
-
-### While we are flattered, you fabulous user, we humbly submit that yes, there is more that we could do. In the future, we hope to:
+###  In the future, we hope to:
 
 - [x] Add usernames attached to opinions
 - [ ] Optimize site performance 
