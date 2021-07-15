@@ -15,7 +15,7 @@
 
 ## Description
 
-On Opinion, you can create an account, share your opinions, and look at the opinions of others. While you can't counter their opinions directly, you can give them a like if you are feeling that sweet sweet reinforcement of your own beliefs--or downvote them to eternity, up to you 😈
+On Opinion, you can create an account, share your opinions, and look at the opinions of others. While you can't counter their opinions directly, you can give them a like if you are feeling that sweet sweet reinforcement of your own beliefs--or downvote them to eternity, up to you
 
 <div align="center">
 <img src="https://media.giphy.com/media/eKhhSRRiIW3OrkU5ef/giphy.gif">
@@ -29,7 +29,7 @@ Made with Node.js and Express, MongoDB and Mongoose, vanilla JavaScript, EJS, Ta
 
 ## Use and Installation
 
-To use this project as a base for your own project--expanding on what we've done so far--fork the project, clone it to your local machine, and work from there! Feel free to submit pull requests if you have any additions that go along with the theme of our project. A task list is down below with future suggested improvements 😉
+To use this project as a base for your own project--expanding on what we've done so far--fork the project, clone it to your local machine, and work from there! Feel free to submit pull requests if you have any additions that go along with the theme of our project. A task list is down below with future suggested improvements.
 
 ### Install
 
@@ -96,9 +96,9 @@ or
 
 - [x] Add usernames attached to opinions
 - [ ] Optimize site performance 
-      - [ ] Remove unused CSS 
-      - [ ] Eliminate render blocking resources
-      - [ ] enable text compression
+     - [ ] Remove unused CSS 
+      -[ ] Eliminate render blocking resources
+      -[ ] enable text compression
 - [ ] Create a public user profile page to see created opinions and amount of upvotes
 - [ ] Add a hover over opinion to see a mini window of more posts created by user & be able to click to their profile
 - [ ] Enable users to update their opinions
