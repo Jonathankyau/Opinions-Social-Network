@@ -15,7 +15,7 @@
 
 ## Description
 
-On Opinion, you can create an account, share your opinions, and look at the opinions of others. While you can't counter their opinions directly, you can give them a like if you are feeling that sweet sweet reinforcement of your own beliefs--or downvote them to eternity, up to you
+On Opinions, you can create an account, share your opinions, and look at the opinions of others. While you can't counter their opinions directly, you can give them a like if you are feeling that sweet sweet reinforcement of your own beliefs--or downvote them to eternity, up to you
 
 <div align="center">
 <img src="https://media.giphy.com/media/eKhhSRRiIW3OrkU5ef/giphy.gif">
