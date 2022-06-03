@@ -97,8 +97,8 @@ or
 - [x] Add usernames attached to opinions
 - [ ] Optimize site performance 
      - [ ] Remove unused CSS 
-      -[ ] Eliminate render blocking resources
-      -[ ] enable text compression
+     - [ ] Eliminate render blocking resources
+     - [ ] enable text compression
 - [ ] Create a public user profile page to see created opinions and amount of upvotes
 - [ ] Add a hover over opinion to see a mini window of more posts created by user & be able to click to their profile
 - [ ] Enable users to update their opinions
